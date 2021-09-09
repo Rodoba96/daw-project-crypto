@@ -9,6 +9,7 @@
       integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
       crossorigin="anonymous"
     />
+    <script type="text/javascript"src="cryptos.js"></script>
   </head>
   <body>
     <div class="container-lg">
@@ -17,25 +18,25 @@
       <div class="tab text-center">
         <button
           class="tablinks btn btn-outline-danger"
-          onclick="openCity(event, 'London')"
+          onclick="openCity(event, 'Bitcoin')"
         >
           Bitcoin
         </button>
         <button
           class="tablinks btn btn-outline-primary"
-          onclick="openCity(event, 'Paris')"
+          onclick="openCity(event, 'Ethereum')"
         >
           Ethereum
         </button>
         <button
           class="tablinks btn btn-outline-warning"
-          onclick="openCity(event, 'Tokyo')"
+          onclick="openCity(event, 'DogeCoin')"
         >
           DogeCoin
         </button>
       </div>
 
-      <div id="London" class="tabcontent text-center">
+      <div id="Bitcoin" class="tabcontent text-center">
         <h3>Bitcoin</h3>
         <h4>
           Here goes graph
@@ -83,8 +84,8 @@
         </div>
       </div>
 
-      <div id="Paris" class="tabcontent text-center">
-        <h3>Paris</h3>
+      <div id="Ethereum" class="tabcontent text-center">
+        <h3>Ethereum</h3>
         <h4>
           Here goes graph
         </h4>
@@ -132,7 +133,7 @@
         </div>
       </div>
 
-      <div id="Tokyo" class="tabcontent text-center">
+      <div id="DogeCoin" class="tabcontent text-center">
         <h3>
           DogeCoin
         </h3>
@@ -183,20 +184,5 @@
       </div>
     </div>
 
-    <script>
-      function openCity(evt, cityName) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-          tabcontent[i].style.display = "none";
-        }
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-          tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-        document.getElementById(cityName).style.display = "block";
-        evt.currentTarget.className += " active";
-      }
-    </script>
   </body>
 </html>
