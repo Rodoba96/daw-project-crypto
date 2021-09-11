@@ -1,3 +1,4 @@
 # daw-project-crypto
-Ffirst partial project
+
+First partial project
 init branch crypto-crypto
