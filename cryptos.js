@@ -161,6 +161,40 @@
         console.log('Something went wrong: ' + error);
       })
     }
+    if(document.getElementById("select1").value=="Bitcoin" || document.getElementById("select2").value=="Bitcoin"){
+      fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin%2C%20dogecoin%2C%20ethereum%2C%20&order=market_cap_desc&per_page=100&page=1&sparkline=false',{
+        method: 'GET'
+      })
+      .then((response) => response.json())
+      .then((json) => {
+          //console.log(json);
+          //BitCoin data
+          var bitcoin= json[0].current_price;
+          //Ethereum data
+          var ethereum=  json[1].current_price;
+          //Doge data
+          var dogecoin= json[2].current_price;
+
+          if(document.getElementById("select1").value=='Bitcoin' && document.getElementById("select2").value=='Bitcoin'){
+            bitcoin = (bitcoin* document.getElementById("input1").value)/(bitcoin* document.getElementById("input1").value)
+            document.getElementById("input2").value=bitcoin
+            console.log(bitcoin)
+          }
+          else if(document.getElementById("select1").value=='Bitcoin' && document.getElementById("select2").value=='Ethereum'){
+            bitcoin = (bitcoin* document.getElementById("input1").value)/(ethereum* document.getElementById("input1").value)
+            document.getElementById("input2").value=bitcoin
+            console.log(bitcoin)
+          }
+          else if(document.getElementById("select1").value=='Bitcoin' && document.getElementById("select2").value=='DogeCoin'){
+            bitcoin = (bitcoin* document.getElementById("input1").value)/(dogecoin* document.getElementById("input1").value)
+            document.getElementById("input2").value=bitcoin
+            console.log(bitcoin)
+          }
+        })
+      .catch((error) => {
+        console.log('Something went wrong: ' + error);
+      })
+    }
 
   }
 
@@ -307,6 +341,40 @@
             Peso=document.getElementById("input3").value/ethereum
             document.getElementById("input4").value=Peso
             console.log(Peso)
+          }
+        })
+      .catch((error) => {
+        console.log('Something went wrong: ' + error);
+      })
+    }
+    if(document.getElementById("select3").value=="Ethereum" || document.getElementById("select4").value=="Ethereum"){
+      fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin%2C%20dogecoin%2C%20ethereum%2C%20&order=market_cap_desc&per_page=100&page=1&sparkline=false',{
+        method: 'GET'
+      })
+      .then((response) => response.json())
+      .then((json) => {
+          //console.log(json);
+          //BitCoin data
+          var bitcoin= json[0].current_price;
+          //Ethereum data
+          var ethereum=  json[1].current_price;
+          //Doge data
+          var dogecoin= json[2].current_price;
+
+          if(document.getElementById("select3").value=='Ethereum' && document.getElementById("select4").value=='Bitcoin'){
+            ethereum = (ethereum* document.getElementById("input3").value)/(bitcoin* document.getElementById("input3").value)
+            document.getElementById("input4").value=ethereum
+            console.log(ethereum)
+          }
+          else if(document.getElementById("select3").value=='Ethereum' && document.getElementById("select4").value=='Ethereum'){
+            ethereum = (ethereum* document.getElementById("input3").value)/(ethereum* document.getElementById("input3").value)
+            document.getElementById("input4").value=ethereum
+            console.log(ethereum)
+          }
+          else if(document.getElementById("select3").value=='Ethereum' && document.getElementById("select4").value=='DogeCoin'){
+            ethereum = (ethereum* document.getElementById("input3").value)/(dogecoin* document.getElementById("input3").value)
+            document.getElementById("input4").value=ethereum
+            console.log(ethereum)
           }
         })
       .catch((error) => {
@@ -460,6 +528,40 @@ function getCoinData3(){
             Peso=document.getElementById("input5").value/ethereum
             document.getElementById("input6").value=Peso
             console.log(Peso)
+          }
+        })
+      .catch((error) => {
+        console.log('Something went wrong: ' + error);
+      })
+    }
+    if(document.getElementById("select5").value=="DogeCoin" || document.getElementById("select6").value=="DogeCoin"){
+      fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin%2C%20dogecoin%2C%20ethereum%2C%20&order=market_cap_desc&per_page=100&page=1&sparkline=false',{
+        method: 'GET'
+      })
+      .then((response) => response.json())
+      .then((json) => {
+          //console.log(json);
+          //BitCoin data
+          var bitcoin= json[0].current_price;
+          //Ethereum data
+          var ethereum=  json[1].current_price;
+          //Doge data
+          var dogecoin= json[2].current_price;
+
+          if(document.getElementById("select5").value=='DogeCoin' && document.getElementById("select6").value=='Bitcoin'){
+            dogecoin = (dogecoin* document.getElementById("input5").value)/(bitcoin* document.getElementById("input5").value)
+            document.getElementById("input6").value=dogecoin
+            console.log(dogecoin)
+          }
+          else if(document.getElementById("select5").value=='DogeCoin' && document.getElementById("select6").value=='Ethereum'){
+            dogecoin = (dogecoin* document.getElementById("input5").value)/(ethereum* document.getElementById("input5").value)
+            document.getElementById("input6").value=dogecoin
+            console.log(dogecoin)
+          }
+          else if(document.getElementById("select5").value=='DogeCoin' && document.getElementById("select6").value=='DogeCoin'){
+            dogecoin = (dogecoin* document.getElementById("input5").value)/(dogecoin* document.getElementById("input5").value)
+            document.getElementById("input6").value=dogecoin
+            console.log(dogecoin)
           }
         })
       .catch((error) => {
