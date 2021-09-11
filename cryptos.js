@@ -164,4 +164,307 @@
 
   }
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  function getCoinData2(){
 
+    if(document.getElementById("select3").value=="Usd" || document.getElementById("select4").value=="Usd"){
+      fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin%2C%20dogecoin%2C%20ethereum%2C%20&order=market_cap_desc&per_page=100&page=1&sparkline=false',{
+        method: 'GET'
+      })
+      .then((response) => response.json())
+      .then((json) => {
+          //console.log(json);
+          //BitCoin data
+          var bitcoin= json[0].current_price;
+          //Ethereum data
+          var ethereum=  json[1].current_price;
+          //Doge data
+          var dogecoin= json[2].current_price;
+
+          if(document.getElementById("select3").value=='Bitcoin' && document.getElementById("select4").value=='Usd'){
+            bitcoin=bitcoin* document.getElementById("input3").value
+            document.getElementById("input4").value=bitcoin
+            console.log(bitcoin)
+          }
+          else if(document.getElementById("select3").value=='Ethereum' && document.getElementById("select4").value=='Usd'){
+            ethereum=ethereum* document.getElementById("input3").value
+            document.getElementById("input4").value=ethereum
+          }
+          else if(document.getElementById("select3").value=='DogeCoin' && document.getElementById("select4").value=='Usd'){
+            dogecoin=dogecoin* document.getElementById("input3").value
+            document.getElementById("input4").value=dogecoin
+            console.log(dogecoin)
+          }
+          else if(document.getElementById("select3").value=='Usd' && document.getElementById("select4").value=='Bitcoin'){
+            Usd=document.getElementById("input3").value/bitcoin
+            document.getElementById("input4").value=Usd
+            console.log(Usd)
+          }
+          else if(document.getElementById("select3").value=='Usd' && document.getElementById("select4").value=='DogeCoin'){
+            Usd=document.getElementById("input3").value/dogecoin
+            document.getElementById("input4").value=Usd
+            console.log(Usd)
+          }
+          else if(document.getElementById("select3").value=='Usd' && document.getElementById("select4").value=='Ethereum'){
+            Usd=document.getElementById("input3").value/ethereum
+            document.getElementById("input4").value=Usd
+            console.log(Usd)
+          }
+        })
+      .catch((error) => {
+        console.log('Something went wrong: ' + error);
+      })
+    }
+
+    if(document.getElementById("select3").value=="Euro" || document.getElementById("select4").value=="Euro"){
+      fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&ids=bitcoin%2C%20dogecoin%2C%20ethereum%2C%20&order=market_cap_desc&per_page=100&page=1&sparkline=false',{
+        method: 'GET'
+      })
+      .then((response) => response.json())
+      .then((json) => {
+          //console.log(json);
+          //BitCoin data
+          var bitcoin= json[0].current_price;
+          //Ethereum data
+          var ethereum=  json[1].current_price;
+          //Doge data
+          var dogecoin= json[2].current_price;
+
+          if(document.getElementById("select3").value=='Bitcoin' && document.getElementById("select4").value=='Euro'){
+            bitcoin=bitcoin* document.getElementById("input3").value
+            document.getElementById("input4").value=bitcoin
+            console.log(bitcoin)
+          }
+          else if(document.getElementById("select3").value=='Ethereum' && document.getElementById("select4").value=='Euro'){
+            ethereum=ethereum* document.getElementById("input3").value
+            document.getElementById("input4").value=ethereum
+          }
+          else if(document.getElementById("select3").value=='DogeCoin' && document.getElementById("select4").value=='Euro'){
+            dogecoin=dogecoin* document.getElementById("input3").value
+            document.getElementById("input4").value=dogecoin
+            console.log(dogecoin)
+          }
+          else if(document.getElementById("select3").value=='Euro' && document.getElementById("select4").value=='Bitcoin'){
+            Euro=document.getElementById("input3").value/bitcoin
+            document.getElementById("input4").value=Euro
+            console.log(Euro)
+          }
+          else if(document.getElementById("select3").value=='Euro' && document.getElementById("select4").value=='DogeCoin'){
+            Euro=document.getElementById("input3").value/dogecoin
+            document.getElementById("input4").value=Euro
+            console.log(Euro)
+          }
+          else if(document.getElementById("select3").value=='Euro' && document.getElementById("select4").value=='Ethereum'){
+            Euro=document.getElementById("input3").value/ethereum
+            document.getElementById("input4").value=Euro
+            console.log(Euro)
+          }
+        })
+      .catch((error) => {
+        console.log('Something went wrong: ' + error);
+      })
+    }
+
+    if(document.getElementById("select3").value=="Peso" || document.getElementById("select4").value=="Peso"){
+      fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=mxn&ids=bitcoin%2C%20dogecoin%2C%20ethereum%2C%20&order=market_cap_desc&per_page=100&page=1&sparkline=false',{
+        method: 'GET'
+      })
+      .then((response) => response.json())
+      .then((json) => {
+          //console.log(json);
+          //BitCoin data
+          var bitcoin= json[0].current_price;
+          //Ethereum data
+          var ethereum=  json[1].current_price;
+          //Doge data
+          var dogecoin= json[2].current_price;
+
+          if(document.getElementById("select3").value=='Bitcoin' && document.getElementById("select4").value=='Peso'){
+            bitcoin=bitcoin* document.getElementById("input3").value
+            document.getElementById("input4").value=bitcoin
+            console.log(bitcoin)
+          }
+          else if(document.getElementById("select3").value=='Ethereum' && document.getElementById("select4").value=='Peso'){
+            ethereum=ethereum* document.getElementById("input3").value
+            document.getElementById("input4").value=ethereum
+          }
+          else if(document.getElementById("select3").value=='DogeCoin' && document.getElementById("select4").value=='Peso'){
+            dogecoin=dogecoin* document.getElementById("input3").value
+            document.getElementById("input4").value=dogecoin
+            console.log(dogecoin)
+          }
+          else if(document.getElementById("select3").value=='Peso' && document.getElementById("select4").value=='Bitcoin'){
+            Peso=document.getElementById("input3").value/bitcoin
+            document.getElementById("input4").value=Peso
+            console.log(Peso)
+          }
+          else if(document.getElementById("select3").value=='Peso' && document.getElementById("select4").value=='DogeCoin'){
+            Peso=document.getElementById("input3").value/dogecoin
+            document.getElementById("input4").value=Peso
+            console.log(Peso)
+          }
+          else if(document.getElementById("select3").value=='Peso' && document.getElementById("select4").value=='Ethereum'){
+            Peso=document.getElementById("input3").value/ethereum
+            document.getElementById("input4").value=Peso
+            console.log(Peso)
+          }
+        })
+      .catch((error) => {
+        console.log('Something went wrong: ' + error);
+      })
+    }
+
+  }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+function getCoinData3(){
+
+    if(document.getElementById("select5").value=="Usd" || document.getElementById("select6").value=="Usd"){
+      fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin%2C%20dogecoin%2C%20ethereum%2C%20&order=market_cap_desc&per_page=100&page=1&sparkline=false',{
+        method: 'GET'
+      })
+      .then((response) => response.json())
+      .then((json) => {
+          //console.log(json);
+          //BitCoin data
+          var bitcoin= json[0].current_price;
+          //Ethereum data
+          var ethereum=  json[1].current_price;
+          //Doge data
+          var dogecoin= json[2].current_price;
+
+          if(document.getElementById("select5").value=='Bitcoin' && document.getElementById("select6").value=='Usd'){
+            bitcoin=bitcoin* document.getElementById("input5").value
+            document.getElementById("input6").value=bitcoin
+            console.log(bitcoin)
+          }
+          else if(document.getElementById("select5").value=='Ethereum' && document.getElementById("select6").value=='Usd'){
+            ethereum=ethereum* document.getElementById("input5").value
+            document.getElementById("input6").value=ethereum
+          }
+          else if(document.getElementById("select5").value=='DogeCoin' && document.getElementById("select6").value=='Usd'){
+            dogecoin=dogecoin* document.getElementById("input5").value
+            document.getElementById("input6").value=dogecoin
+            console.log(dogecoin)
+          }
+          else if(document.getElementById("select5").value=='Usd' && document.getElementById("select6").value=='Bitcoin'){
+            Usd=document.getElementById("input5").value/bitcoin
+            document.getElementById("input6").value=Usd
+            console.log(Usd)
+          }
+          else if(document.getElementById("select5").value=='Usd' && document.getElementById("select6").value=='DogeCoin'){
+            Usd=document.getElementById("input5").value/dogecoin
+            document.getElementById("input6").value=Usd
+            console.log(Usd)
+          }
+          else if(document.getElementById("select5").value=='Usd' && document.getElementById("select6").value=='Ethereum'){
+            Usd=document.getElementById("input5").value/ethereum
+            document.getElementById("input6").value=Usd
+            console.log(Usd)
+          }
+        })
+      .catch((error) => {
+        console.log('Something went wrong: ' + error);
+      })
+    }
+
+    if(document.getElementById("select5").value=="Euro" || document.getElementById("select6").value=="Euro"){
+      fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&ids=bitcoin%2C%20dogecoin%2C%20ethereum%2C%20&order=market_cap_desc&per_page=100&page=1&sparkline=false',{
+        method: 'GET'
+      })
+      .then((response) => response.json())
+      .then((json) => {
+          //console.log(json);
+          //BitCoin data
+          var bitcoin= json[0].current_price;
+          //Ethereum data
+          var ethereum=  json[1].current_price;
+          //Doge data
+          var dogecoin= json[2].current_price;
+
+          if(document.getElementById("select5").value=='Bitcoin' && document.getElementById("select6").value=='Euro'){
+            bitcoin=bitcoin* document.getElementById("input5").value
+            document.getElementById("input6").value=bitcoin
+            console.log(bitcoin)
+          }
+          else if(document.getElementById("select5").value=='Ethereum' && document.getElementById("select6").value=='Euro'){
+            ethereum=ethereum* document.getElementById("input5").value
+            document.getElementById("input6").value=ethereum
+          }
+          else if(document.getElementById("select5").value=='DogeCoin' && document.getElementById("select6").value=='Euro'){
+            dogecoin=dogecoin* document.getElementById("input5").value
+            document.getElementById("input6").value=dogecoin
+            console.log(dogecoin)
+          }
+          else if(document.getElementById("select5").value=='Euro' && document.getElementById("select6").value=='Bitcoin'){
+            Euro=document.getElementById("input5").value/bitcoin
+            document.getElementById("input6").value=Euro
+            console.log(Euro)
+          }
+          else if(document.getElementById("select5").value=='Euro' && document.getElementById("select6").value=='DogeCoin'){
+            Euro=document.getElementById("input5").value/dogecoin
+            document.getElementById("input6").value=Euro
+            console.log(Euro)
+          }
+          else if(document.getElementById("select5").value=='Euro' && document.getElementById("select6").value=='Ethereum'){
+            Euro=document.getElementById("input5").value/ethereum
+            document.getElementById("input6").value=Euro
+            console.log(Euro)
+          }
+        })
+      .catch((error) => {
+        console.log('Something went wrong: ' + error);
+      })
+    }
+
+    if(document.getElementById("select5").value=="Peso" || document.getElementById("select6").value=="Peso"){
+      fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=mxn&ids=bitcoin%2C%20dogecoin%2C%20ethereum%2C%20&order=market_cap_desc&per_page=100&page=1&sparkline=false',{
+        method: 'GET'
+      })
+      .then((response) => response.json())
+      .then((json) => {
+          //console.log(json);
+          //BitCoin data
+          var bitcoin= json[0].current_price;
+          //Ethereum data
+          var ethereum=  json[1].current_price;
+          //Doge data
+          var dogecoin= json[2].current_price;
+
+          if(document.getElementById("select5").value=='Bitcoin' && document.getElementById("select6").value=='Peso'){
+            bitcoin=bitcoin* document.getElementById("input5").value
+            document.getElementById("input6").value=bitcoin
+            console.log(bitcoin)
+          }
+          else if(document.getElementById("select5").value=='Ethereum' && document.getElementById("select6").value=='Peso'){
+            ethereum=ethereum* document.getElementById("input5").value
+            document.getElementById("input6").value=ethereum
+          }
+          else if(document.getElementById("select5").value=='DogeCoin' && document.getElementById("select6").value=='Peso'){
+            dogecoin=dogecoin* document.getElementById("input5").value
+            document.getElementById("input6").value=dogecoin
+            console.log(dogecoin)
+          }
+          else if(document.getElementById("select5").value=='Peso' && document.getElementById("select6").value=='Bitcoin'){
+            Peso=document.getElementById("input5").value/bitcoin
+            document.getElementById("input6").value=Peso
+            console.log(Peso)
+          }
+          else if(document.getElementById("select5").value=='Peso' && document.getElementById("select6").value=='DogeCoin'){
+            Peso=document.getElementById("input5").value/dogecoin
+            document.getElementById("input6").value=Peso
+            console.log(Peso)
+          }
+          else if(document.getElementById("select5").value=='Peso' && document.getElementById("select6").value=='Ethereum'){
+            Peso=document.getElementById("input5").value/ethereum
+            document.getElementById("input6").value=Peso
+            console.log(Peso)
+          }
+        })
+      .catch((error) => {
+        console.log('Something went wrong: ' + error);
+      })
+    }
+
+  }
