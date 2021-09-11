@@ -46,20 +46,26 @@
           <div class="col-sm-6">
             <div class="form-group">
               <span>Select a coin</span>
-              <select class="form-control">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
+              <select class="form-control" id="select1">
+                <option value="Bitcoin">Bitcoin</option>
+                <option value="Ethereum">Ethereum</option>
+                <option value="DogeCoin">DogeCoin</option>
+                <option value="Usd">Dollars</option>
+                <option value="Cusd">Canadian Dollars</option>
+                <option value="Peso">Peso Mexicano</option>
               </select>
             </div>
           </div>
           <div class="col-sm-6">
             <div class="form-group">
               <span>Select a coin</span>
-              <select class="form-control">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
+              <select class="form-control" id="select2">
+                <option value="Bitcoin">Bitcoin</option>
+                <option value="Ethereum">Ethereum</option>
+                <option value="DogeCoin">DogeCoin</option>
+                <option value="Usd">Dollars</option>
+                <option value="Cusd">Canadian Dollars</option>
+                <option value="Peso">Peso Mexicano</option>
               </select>
             </div>
           </div>
@@ -69,6 +75,7 @@
             type="text"
             class="form-control"
             placeholder="Value"
+            id="input1"
           />
           <span class="input-group-text mx-1">--></span>
           <input
@@ -76,11 +83,12 @@
             class="form-control"
             placeholder="Value"
             disabled="disabled"
+            id="input2"
           />
           <br>
         </div>
         <div class="text-center">
-        <button type="button" class="btn btn-primary text-center">Primary</button>
+        <button type="button" class="btn btn-primary text-center" onclick="getCoinData()">Calculate</button>
         </div>
       </div>
 

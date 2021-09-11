@@ -14,7 +14,6 @@
 
       
       function getCoinData(){
-        var coinData;
         fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin%2C%20dogecoin%2C%20ethereum%2C%20&order=market_cap_desc&per_page=100&page=1&sparkline=false',{
           method: 'GET'
         })
@@ -27,27 +26,20 @@
            var ethereum=  json[1].current_price;
           //Doge data
            var dogecoin= json[2].current_price;
-          if(select1=='bitcoin' && select2=='usd'){
-            bitcoin=bitcoin*factorconv
-            document.getElementById("input2").innerHTML=bitcoin
+          
+          if( document.getElementById("select1").value=='Bitcoin' && document.getElementById("select2").value=='Usd'){
+            bitcoin=bitcoin* document.getElementById("input1").value
+            document.getElementById("input2").value=bitcoin
+            console.log(bitcoin)
         }
-          else if(select1=='ethereum' && select2=='usd'){
-            document.getElementById("input2").innerHTML=ethereum
+          else if(document.getElementById("select1").value=='Ethereum' && document.getElementById("select2").value=='Usd'){
+            ethereum=ethereum* document.getElementById("input1").value
+            document.getElementById("input2").value=ethereum
           }
-          else if(select1=='dogecoin' && select2=='usd'){
-            document.getElementById("input2").innerHTML=dogecoin
-          }
-          if(select1=='usd' && select2=='bitcoin'){
-            dollar=document.getElementById("input1")/bitcoin
-            document.getElementById("input2").innerHTML=dollar
-        }
-          else if(select1=='usd' && select2=='ethereum'){
-            dollar=document.getElementById("input1")/ethereum
-            document.getElementById("input2").innerHTML=dollar
-          }
-          else if(select1=='usd' && select2=='dogecoin'){
-            dollar=document.getElementById("input1")/dogecoin
-            document.getElementById("input2").innerHTML=dollar
+          else if(document.getElementById("select1").value=='DogeCoin' && document.getElementById("select2").value=='Usd'){
+            dogecoin=dogecoin* document.getElementById("input1").value
+            document.getElementById("input2").value=dogecoin
+            console.log(dogecoin)
           }
           
         })
@@ -56,20 +48,4 @@
         })
       }
       
-
-      getCoinData();
-
-
-
-switch (expr) {
-  case 'Oranges':
-    console.log('Oranges are $0.59 a pound.');
-    break;
-  case 'Mangoes':
-  case 'Papayas':
-    console.log('Mangoes and papayas are $2.79 a pound.');
-    // expected output: "Mangoes and papayas are $2.79 a pound."
-    break;
-  default:
-    console.log(`Sorry, we are out of ${expr}.`);
 
