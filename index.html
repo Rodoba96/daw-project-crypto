@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    
+</script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="style.css" />
     <link
@@ -12,6 +15,11 @@
     <script type="text/javascript"src="cryptos.js"></script>
   </head>
   <body>
+
+    
+
+
+
     <div class="container-lg">
       <h3 class="text-center">Select your Crytpo</h3>
 
@@ -39,7 +47,7 @@
       <div id="Bitcoin" class="tabcontent text-center">
         <h3>Bitcoin</h3>
         <h4>
-          Here goes graph
+          <canvas id="myChartBitcoin" style="width:100%;max-width:600px"></canvas>
         </h4>
         <p>Some text</p>
         <div class="row">
@@ -95,7 +103,7 @@
       <div id="Ethereum" class="tabcontent text-center">
         <h3>Ethereum</h3>
         <h4>
-          Here goes graph
+          <canvas id="myChartEther" style="width:100%;max-width:600px"></canvas>
         </h4>
         <p>Some text</p>
         <div class="row">
@@ -146,7 +154,7 @@
           DogeCoin
         </h3>
         <h4>
-          Here goes graph
+          <canvas id="myChartDogecoin" style="width:100%;max-width:600px"></canvas>
         </h4>
         <p>Some text</p>
         <div class="row">
