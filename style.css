@@ -23,6 +23,16 @@ span {
   border-radius: 15px;
 }
 
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 3px;
+  background-color: #85929E;
+  text-align: center;  
+}
+
 /* Change background color of buttons on hover */
 
 /* Create an active/current tablink class */
@@ -56,3 +66,4 @@ span {
     opacity: 1;
   }
 }
+
