@@ -2,8 +2,6 @@
 <html>
   <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-    
-</script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="style.css" />
     <link
@@ -23,182 +21,203 @@
     <div class="container-lg">
       <h3 class="text-center">Select your Crytpo</h3>
 
-      <div class="tab text-center">
-        <button
-          class="tablinks btn btn-outline-danger"
-          onclick="openCity(event, 'Bitcoin')"
-        >
-          Bitcoin
-        </button>
-        <button
-          class="tablinks btn btn-outline-primary"
-          onclick="openCity(event, 'Ethereum')"
-        >
-          Ethereum
-        </button>
-        <button
-          class="tablinks btn btn-outline-warning"
-          onclick="openCity(event, 'DogeCoin')"
-        >
-          DogeCoin
-        </button>
-      </div>
+    <div class="tab text-center">
+      <button
+      class="tablinks btn btn-outline-danger"
+      onclick="openCity(event, 'Bitcoin')"
+      >
+      Bitcoin
+    </button>
+    <button
+    class="tablinks btn btn-outline-primary"
+    onclick="openCity(event, 'Ethereum')"
+    >
+    Ethereum
+  </button>
+  <button
+  class="tablinks btn btn-outline-warning"
+  onclick="openCity(event, 'DogeCoin')"
+  >
+  DogeCoin
+</button>
+</div>
 
-      <div id="Bitcoin" class="tabcontent text-center">
-        <h3>Bitcoin</h3>
-        <h4>
-          <canvas id="myChartBitcoin" style="width:100%;max-width:600px"></canvas>
-        </h4>
-        <p>Some text</p>
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="form-group">
-              <span>Select a coin</span>
-              <select class="form-control" id="select1">
-                <option value="Bitcoin">Bitcoin</option>
-                <option value="Ethereum">Ethereum</option>
-                <option value="DogeCoin">DogeCoin</option>
-                <option value="Usd">Dollars</option>
-                <option value="Cusd">Canadian Dollars</option>
-                <option value="Peso">Peso Mexicano</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="form-group">
-              <span>Select a coin</span>
-              <select class="form-control" id="select2">
-                <option value="Bitcoin">Bitcoin</option>
-                <option value="Ethereum">Ethereum</option>
-                <option value="DogeCoin">DogeCoin</option>
-                <option value="Usd">Dollars</option>
-                <option value="Cusd">Canadian Dollars</option>
-                <option value="Peso">Peso Mexicano</option>
-              </select>
-            </div>
-          </div>
-        </div>
-        <div class="input-group mt-3 mb-3">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Value"
-            id="input1"
-          />
-          <span class="input-group-text mx-1">--></span>
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Value"
-            disabled="disabled"
-            id="input2"
-          />
-          <br>
-        </div>
-        <div class="text-center">
-        <button type="button" class="btn btn-primary text-center" onclick="getCoinData()">Calculate</button>
-        </div>
-      </div>
-
-      <div id="Ethereum" class="tabcontent text-center">
-        <h3>Ethereum</h3>
-        <h4>
-          <canvas id="myChartEther" style="width:100%;max-width:600px"></canvas>
-        </h4>
-        <p>Some text</p>
-        <div class="row">
-          
-          <div class="col-sm-6">
-            <div class="form-group">
-              <span>Select a coin</span>
-              <select class="form-control">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="form-group">
-              <span>Select a coin</span>
-              <select class="form-control">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-              </select>
-            </div>
-          </div>
-        </div>
-        <div class="input-group mt-3 mb-3">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Value"
-          />
-          <span class="input-group-text mx-1">--></span>
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Value"
-            disabled="disabled"
-          />
-          <br>
-        </div>
-        <div class="text-center">
-        <button type="button" class="btn btn-primary text-center">Primary</button>
-        </div>
-      </div>
-
-      <div id="DogeCoin" class="tabcontent text-center">
-        <h3>
-          DogeCoin
-        </h3>
-        <h4>
-          <canvas id="myChartDogecoin" style="width:100%;max-width:600px"></canvas>
-        </h4>
-        <p>Some text</p>
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="form-group">
-              <span>Select a coin</span>
-              <select class="form-control">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="form-group">
-              <span>Select a coin</span>
-              <select class="form-control">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-              </select>
-            </div>
-          </div>
-        </div>
-        <div class="input-group mt-3 mb-3">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Value"
-          />
-          <span class="input-group-text mx-1">--></span>
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Value"
-            disabled="disabled"
-          />
-          <br>
-        </div>
-        <div class="text-center">
-        <button type="button" class="btn btn-primary text-center">Primary</button>
-        </div>
+<div id="Bitcoin" class="tabcontent text-center">
+  <h3>Bitcoin</h3>
+  <h4>
+    <canvas id="myChartBitcoin" style="width:100%;max-width:600px"></canvas>
+  </h4>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <span>Select a coin</span>
+        <select class="form-control" id="select1">
+          <option value="Bitcoin">Bitcoin</option>
+          <!-- <option value="Ethereum">Ethereum</option>
+          <option value="DogeCoin">DogeCoin</option> -->
+          <option value="Usd">Dollars</option>
+          <option value="Euro">Euro</option>
+          <option value="Peso">Peso Mexicano</option>
+        </select>
       </div>
     </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <span>Select a coin</span>
+        <select class="form-control" id="select2">
+          <option value="Bitcoin">Bitcoin</option>
+          <option value="Ethereum">Ethereum</option>
+          <option value="DogeCoin">DogeCoin</option>
+          <option value="Usd">Dollars</option>
+          <option value="Euro">Euro</option>
+          <option value="Peso">Peso Mexicano</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="input-group mt-3 mb-3">
+    <input
+    type="text"
+    class="form-control"
+    placeholder="Value"
+    id="input1"
+    />
+    <span class="input-group-text mx-1">--></span>
+    <input
+    type="text"
+    class="form-control"
+    placeholder="Value"
+    disabled="disabled"
+    id="input2"
+    />
+    <br>
+  </div>
+  <div class="text-center">
+    <button type="button" class="btn btn-primary text-center" onclick="getCoinData()">Calculate</button>
+  </div>
+</div>
 
-  </body>
+<div id="Ethereum" class="tabcontent text-center">
+  <h3>Ethereum</h3>
+  <h4>
+    <canvas id="myChartEther" style="width:100%;max-width:600px"></canvas>
+  </h4>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <span>Select a coin</span>
+        <select class="form-control" id="select3">
+          <option value="Ethereum">Ethereum</option>
+          <!-- <option value="Bitcoin">Bitcoin</option>
+          <option value="DogeCoin">DogeCoin</option> -->
+          <option value="Usd">Dollars</option>
+          <option value="Euro">Euro</option>
+          <option value="Peso">Peso Mexicano</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <span>Select a coin</span>
+        <select class="form-control" id="select4">
+          <option value="Bitcoin">Bitcoin</option>
+          <option value="Ethereum">Ethereum</option>
+          <option value="DogeCoin">DogeCoin</option>
+          <option value="Usd">Dollars</option>
+          <option value="Euro">Euro</option>
+          <option value="Peso">Peso Mexicano</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="input-group mt-3 mb-3">
+    <input
+    type="text"
+    class="form-control"
+    placeholder="Value"
+    id="input3"
+    />
+    <span class="input-group-text mx-1">--></span>
+    <input
+    type="text"
+    class="form-control"
+    placeholder="Value"
+    disabled="disabled"
+    id="input4"
+    />
+    <br>
+  </div>
+  <div class="text-center">
+    <button type="button" class="btn btn-primary text-center" onclick="getCoinData2()">Calculate</button>
+  </div>
+</div>
+
+<div id="DogeCoin" class="tabcontent text-center">
+  <h3>
+    DogeCoin
+  </h3>
+  <h4>
+    <canvas id="myChartDogecoin" style="width:100%;max-width:600px"></canvas>
+  </h4>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <span>Select a coin</span>
+        <select class="form-control" id="select5">
+          <option value="DogeCoin">DogeCoin</option>
+          <!-- <option value="Ethereum">Ethereum</option>
+          <option value="Bitcoin">Bitcoin</option> -->
+          <option value="Usd">Dollars</option>
+          <option value="Euro">Euro</option>
+          <option value="Peso">Peso Mexicano</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <span>Select a coin</span>
+        <select class="form-control" id="select6">
+          <option value="Bitcoin">Bitcoin</option>
+          <option value="Ethereum">Ethereum</option>
+          <option value="DogeCoin">DogeCoin</option>
+          <option value="Usd">Dollars</option>
+          <option value="Euro">Euro</option>
+          <option value="Peso">Peso Mexicano</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="input-group mt-3 mb-3">
+    <input
+    type="text"
+    class="form-control"
+    placeholder="Value"
+    id="input5"
+    />
+    <span class="input-group-text mx-1">--></span>
+    <input
+    type="text"
+    class="form-control"
+    placeholder="Value"
+    disabled="disabled"
+    id="input6"
+    />
+    <br>
+  </div>
+  <div class="text-center">
+    <button type="button" class="btn btn-primary text-center" onclick="getCoinData3()">Calculate</button>
+  </div>
+</div>
+
+<footer>
+  <h4>Team Members</h4>
+  <p>Fernando Urióstegui Peña - A01207525<br>
+  <p>Jorge Ricardo Franco Marín - A01701980<br>
+  <p>Rolando Domínguez Bargalló - A01702398<br>
+
+  <a href="contacto.html">Contact Us</a>
+
+</footer>
+</body>
 </html>
+
